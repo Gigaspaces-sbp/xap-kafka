@@ -1,4 +1,4 @@
-#GigaSpaces XAP and Kafka integration
+# GigaSpaces XAP and Kafka integration
 
 ## Introduction
 
