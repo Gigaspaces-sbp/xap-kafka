@@ -1,6 +1,6 @@
 #GigaSpaces XAP and Kafka integration
 
-##Introduction
+## Introduction
 
 Apache Kafka is a high-throughput distributed messaging system.
 This project is aimed to integrate GigaSpaces with Apache Kafka so that GigaSpaces persists data operations to Kafka. Kafka is used in a sense of external data store. The data is Kafka in available for subscription for a range of use cases including loading into Hadoop or offline data warehousing systems for offline reporting and processing.
@@ -16,33 +16,33 @@ By default Kafka messages are uniformly distributed among Kafka partitions. Plea
 
 ![Screenshot](./Pictures/Picture2.png)
 
-##Getting started
+## Getting started
 
 There is an example application located in <project_root>/example which demonstrates how to configure Kafka persistence and implement a simple Kafka consumer.
 
 In order to run an example, please follow the instruction below:
 
-####1.Install Kafka <br>
-####2.	Start Zookeeper and Kafka server <br>
+#### 1.Install Kafka <br>
+#### 2.	Start Zookeeper and Kafka server <br>
     `bin/zookeeper-server-start.sh config/zookeeper.properties`<br>
     `bin/kafka-list-topic.sh --zookeeper localhost:2181`<br>
-####3.	Build project <br>
+#### 3.	Build project <br>
     `cd <project_root>` <br>
     `mvn clean install`<br>
-####4.	Deploy example to GigaSpaces <br>
+#### 4.	Deploy example to GigaSpaces <br>
     `cd example` <br>
     `mvn os:deploy` <br>
-####5.	Check GigaSpaces log files, there should be messages printed by Feeder and Consumer.
+#### 5.	Check GigaSpaces log files, there should be messages printed by Feeder and Consumer.
 
-##Configuration
+## Configuration
 
-###Library dependency
+### Library dependency
 
 The following maven dependency needs to be included to your project in order to use Kafka persistence. This artifact is built from <project_rood>/kafka-persistence source directory.
 
 ![Screenshot](./Pictures/Picture3.png)
 
-###Mirror service 
+### Mirror service 
 
 Here is an example of Kafka Space Synchronization Endpoint configuration.
 
@@ -55,13 +55,13 @@ The default properties applied to Kafka producer are the following:
 
 These default properties could be overridden if there is a need to customize GigaSpace-Kafka protocol. See Customization section below for details.
 
-###Space class
+### Space class
 
 In order to associate Kafka topic with domain model class, class should be annotated with @KafkaTopic annotation and marked as Serializable. Here is an example
 
 ![Screenshot](./Pictures/Picture6.png)
 
-###Space documents
+### Space documents
 
 To configure Kafka topic for SpaceDocuments or Extended SpaceDocument, the property KafkaPersistenceConstants.SPACE_DOCUMENT_KAFKA_TOPIC_PROPERTY_NAME should be added to document. Here is an example
 
@@ -71,11 +71,11 @@ It’s also possible to configure name of the property which defines the Kafka t
 
 ![Screenshot](./Pictures/Picture8.png)
 
-###Kafka consumers
+### Kafka consumers
 
 Kafka persistence library provides a wrapper around native Kafka Consumer API to preset configuration responsible for GigaSpace-Kafka protocol serialization. Please see com.epam.openspaces.persistency.kafka.consumer.KafkaConsumer, example of how to use it could be found in <project_root>/example module.
 
-##Customization
+## Customization
 
 Kafka persistence was designed to be extensible and customizable. 
 
