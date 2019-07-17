@@ -24,14 +24,14 @@ In order to run an example, please follow the instruction below:
 
 #### 1.Install Kafka <br>
 #### 2.	Start Zookeeper and Kafka server <br>
-    `bin/zookeeper-server-start.sh config/zookeeper.properties`<br>
-    `bin/kafka-list-topic.sh --zookeeper localhost:2181`<br>
+    bin/zookeeper-server-start.sh config/zookeeper.properties
+    bin/kafka-list-topic.sh --zookeeper localhost:2181
 #### 3.	Build project <br>
-    `cd <project_root>` <br>
-    `mvn clean install`<br>
+    cd <project_root>
+    mvn clean install
 #### 4.	Deploy example to GigaSpaces <br>
-    `cd example` <br>
-    `mvn os:deploy` <br>
+    cd example/dev-scripts
+    ./deploy
 #### 5.	Check GigaSpaces log files, there should be messages printed by Feeder and Consumer.
 
 ## Configuration
