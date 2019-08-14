@@ -25,18 +25,18 @@ In order to run an example, please follow the instruction below:
 #### 1.Install Kafka <br>
         Follow step 1:
         https://kafka.apache.org/quickstart
-#### 2. Run insightedge/xap
+#### 2. Run insightedge/xap<br>
         ./gs.sh host run-agent --auto --gsc=4
 #### 3.	Start Kafka server <br>
         $KAFKA_HOME/bin/kafka-server-start.sh config/server.properties
-#### 4. initials environment variables:
+#### 4. initials environment variables:<br>
         cd <project_root>/example/dev-scripts
         edit set-env.sh
 #### 5.	Build project <br>
         ./rebuild.sh
 #### 6.	Deploy example to GigaSpaces <br>
         ./deploy
-#### 7.	Check GigaSpaces log files, there should be messages printed by Feeder and Consumer.
+#### 7.	Check GigaSpaces log files, there should be messages printed by Feeder and Consumer.<br>
 
 ## Configuration
 
