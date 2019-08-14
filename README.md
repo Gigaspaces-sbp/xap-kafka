@@ -36,7 +36,7 @@ In order to run an example, please follow the instruction below:
         ./rebuild.sh
 #### 6.	Deploy example to GigaSpaces <br>
         ./deploy
-#### 7.	Check GigaSpaces log files, there should be messages printed by Feeder and Consumer.<br> 
+#### 7.	Check GigaSpaces log files, there should be messages printed by Feeder and Consumer.<br>
 
 ## Configuration
 
