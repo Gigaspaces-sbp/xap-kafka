@@ -23,16 +23,20 @@ There is an example application located in <project_root>/example which demonstr
 In order to run an example, please follow the instruction below:
 
 #### 1.Install Kafka <br>
-#### 2.	Start Zookeeper and Kafka server <br>
-    bin/zookeeper-server-start.sh config/zookeeper.properties
-    bin/kafka-list-topic.sh --zookeeper localhost:2181
-#### 3.	Build project <br>
-    cd <project_root>
-    mvn clean install
-#### 4.	Deploy example to GigaSpaces <br>
-    cd example/dev-scripts
-    ./deploy
-#### 5.	Check GigaSpaces log files, there should be messages printed by Feeder and Consumer.
+        Follow step 1:
+        https://kafka.apache.org/quickstart
+#### 2. Run insightedge/xap
+        ./gs.sh host run-agent --auto --gsc=4
+#### 3.	Start Kafka server <br>
+        $KAFKA_HOME/bin/kafka-server-start.sh config/server.properties
+#### 4. initials environment variables:
+        cd <project_root>/example/dev-scripts
+        edit set-env.sh
+#### 5.	Build project <br>
+        ./rebuild.sh
+#### 6.	Deploy example to GigaSpaces <br>
+        ./deploy
+#### 7.	Check GigaSpaces log files, there should be messages printed by Feeder and Consumer.
 
 ## Configuration
 
