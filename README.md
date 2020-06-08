@@ -26,7 +26,7 @@ In order to run an example, please follow the instruction below:
         Follow step 1:
         https://kafka.apache.org/quickstart
 #### 2. Run insightedge/xap<br>
-        ./gs.sh host run-agent --auto --gsc=4
+        ./gs.sh host run-agent --auto --gsc=5
 #### 3.	Start Kafka server <br>
         $KAFKA_HOME/bin/kafka-server-start.sh $KAFKA_HOME/config/server.properties
 #### 4. initials environment variables:<br>
