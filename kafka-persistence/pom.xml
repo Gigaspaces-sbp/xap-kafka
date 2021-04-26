@@ -16,7 +16,7 @@
         <gs.version>14.5.0</gs.version>
         <kafka.version>0.8.0</kafka.version>
         <commons.lang.version>2.3</commons.lang.version>
-        <commons.io.version>2.4</commons.io.version>
+        <commons.io.version>2.7</commons.io.version>
         <junit.version>4.13.1</junit.version>
     </properties>
 
