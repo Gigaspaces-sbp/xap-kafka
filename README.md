@@ -22,13 +22,20 @@ There is an example application located in <project_root>/example which demonstr
 
 In order to run an example, please follow the instruction below:
 
-#### 1.Install Kafka <br>
-        Follow step 1:
-        https://kafka.apache.org/quickstart
-#### 2. Run insightedge/xap<br>
+## Prerequisite
+- Installation of Confluent ( you can get it from from here: https://www.confluent.io/installation/ )  
+- [Installation of Gigaspaces v16.1.1](https://docs.gigaspaces.com/latest/started/installation.html?Highlight=download)
+- Git, Maven and JDK 1.8
+
+
+#### 1. Run insightedge/xap<br>
         ./gs.sh host run-agent --auto --gsc=5
+#### 2. Start ZK
+        cd <confluent-home>/bin
+        ./zookeeper-server-start ../etc/kafka/zookeeper.properties
 #### 3.	Start Kafka server <br>
-        $KAFKA_HOME/bin/kafka-server-start.sh $KAFKA_HOME/config/server.properties
+        cd <confluent-home>/bin
+        ./kafka-server-start ../etc/kafka/server.properties 
 #### 4. initials environment variables:<br>
         cd <project_root>/example/dev-scripts
         edit set-env.sh
