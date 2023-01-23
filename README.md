@@ -24,26 +24,40 @@ In order to run an example, please follow the instruction below:
 
 ## Prerequisite
 - Installation of Confluent ( you can get it from from here: https://www.confluent.io/installation/ )  
-- [Installation of Gigaspaces v16.1.1](https://docs.gigaspaces.com/latest/started/installation.html?Highlight=download)
+- [Installation of Gigaspaces v16.2.1](https://docs.gigaspaces.com/latest/started/installation.html?Highlight=downloading)
 - Git, Maven and JDK 1.8
 
 
 #### 1. Run insightedge/xap<br>
         ./gs.sh host run-agent --auto --gsc=5
-#### 2. Start ZK
+
+#### 2  Edit <confluent-home>/etc/kafka/zookeeper.properties       
+  Gigaspace ZK is running on port 2181
+ 
+  Edit <confluent-home>/etc/kafka/zookeeper.properties
+        
+  and modify the Confluent ZK port from 2181 to 2182 (could be any unused port)     
+
+#### 3. Start ZK
         cd <confluent-home>/bin
         ./zookeeper-server-start ../etc/kafka/zookeeper.properties
-#### 3.	Start Kafka server <br>
+        
+#### 4.Edit <confluent-home>/etc/kafka/server.properties
+   
+   modify ZK port from 2181 to 2182        
+        
+#### 5.	Start Kafka server <br>
         cd <confluent-home>/bin
         ./kafka-server-start ../etc/kafka/server.properties 
-#### 4. initials environment variables:<br>
+#### 6. initials environment variables:<br>
         cd <project_root>/example/dev-scripts
         edit set-env.sh
-#### 5.	Build project <br>
+        and put the right GROUP, LOCATORS and XAP_HOME (point to the right Gigaspaces version). 
+#### 7.	Build project <br>
         ./rebuild.sh
-#### 6.	Deploy example to GigaSpaces <br>
+#### 8.	Deploy example to GigaSpaces <br>
         ./deploy.sh
-#### 7.	Check GigaSpaces log files, there should be messages printed by Feeder and Consumer.<br>
+#### 9.	Check GigaSpaces log files, there should be messages printed by Feeder and Consumer.<br>
 
 ## Tear Down
     ./undeploy.sh
