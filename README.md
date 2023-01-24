@@ -49,6 +49,13 @@ In order to run an example, please follow the instruction below:
 #### 5.	Start Kafka server <br>
         cd <confluent-home>/bin
         ./kafka-server-start ../etc/kafka/server.properties 
+        
+Note : If bind exception occurred on port 8090 while running kafka, Edit server.propeties as below :
+        Uncomment below lines in /etc/kafka/server.properties and change port from 8090 to 8091 like below
+        
+        confluent.metadata.server.listeners=http://0.0.0.0:8091
+        confluent.metadata.server.advertised.listeners=http://127.0.0.1:8091
+        
 #### 6. initials environment variables:<br>
         cd <project_root>/example/dev-scripts
         edit set-env.sh
